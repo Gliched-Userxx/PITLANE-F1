@@ -1,0 +1,65 @@
+body{
+background:black;
+color:white;
+font-family:Arial, Helvetica, sans-serif;
+background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/116/191/original/F1-logo-red-on-white.jpeg?1708530205);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 100vh;
+background-attachment: fixed;
+}
+
+.navbar{
+background:#e10600;
+position: sticky;
+top: 0;
+}
+
+.navbar-nav .nav-link{
+    white-space: nowrap;
+}
+
+.navbar-brand{
+font-size:22px;
+letter-spacing:1px;
+}
+
+h2{
+font-weight:700;
+color:white;
+}
+
+.card{
+background:black;
+border:none;
+color:white;
+transition:0.3s;
+}
+
+.card img{
+    height:200px;
+    width:100%;
+    object-fit:contain;
+    padding:20px;
+    background:white;
+}
+
+.card-img-top{
+height:200px;
+object-fit:cover;
+}
+
+.btn-danger{
+background:rgb(208, 0, 0);
+border:none;
+}
+
+.btn-danger:hover{
+background:rgb(254, 67, 67);
+}
+
+footer{
+background:black;
+font-size:14px;
+}
