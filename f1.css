@@ -1,65 +1,578 @@
-body{
-background:black;
-color:white;
-font-family:Arial, Helvetica, sans-serif;
-background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/116/191/original/F1-logo-red-on-white.jpeg?1708530205);
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-height: 100vh;
-background-attachment: fixed;
+/* =========================================
+   PITLANE F1 - DARK MODE RACING THEME
+   ========================================= */
+
+* {
+    box-sizing: border-box;
 }
 
-.navbar{
-background:#e10600;
-position: sticky;
-top: 0;
+html {
+    scroll-behavior: smooth;
 }
 
-.navbar-nav .nav-link{
+body {
+    margin: 0;
+    background: #050505;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* F1 Background */
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.82),
+            rgba(0, 0, 0, 0.92)
+        ),
+        url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/116/191/original/F1-logo-red-on-white.jpeg?1708530205");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.navbar {
+    background: rgba(225, 6, 0, 0.95) !important;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    padding: 13px 20px;
+
+    border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.6);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* Navbar brand */
+
+.navbar-brand {
+    font-size: 22px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: white !important;
+
+    transition: 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #111 !important;
+
+    transform: translateX(3px);
+}
+
+
+/* Navbar links */
+
+.navbar-nav .nav-link {
     white-space: nowrap;
+
+    color: white !important;
+
+    font-weight: 600;
+
+    margin-left: 10px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.navbar-brand{
-font-size:22px;
-letter-spacing:1px;
+.navbar-nav .nav-link:hover {
+    color: #111 !important;
+
+    transform: translateY(-2px);
 }
 
-h2{
-font-weight:700;
-color:white;
+
+/* Navbar toggle */
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.card{
-background:black;
-border:none;
-color:white;
-transition:0.3s;
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-.card img{
-    height:200px;
-    width:100%;
-    object-fit:contain;
-    padding:20px;
-    background:white;
+
+/* =========================================
+   DROPDOWN MENU
+   ========================================= */
+
+.dropdown-menu {
+    background: #111;
+
+    border: 1px solid #333;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.7);
 }
 
-.card-img-top{
-height:200px;
-object-fit:cover;
+.dropdown-item {
+    color: white;
+
+    padding: 10px 16px;
+
+    transition: 0.2s ease;
 }
 
-.btn-danger{
-background:rgb(208, 0, 0);
-border:none;
+.dropdown-item:hover {
+    background: #e10600;
+
+    color: white;
 }
 
-.btn-danger:hover{
-background:rgb(254, 67, 67);
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+main {
+    min-height: calc(100vh - 150px);
 }
 
-footer{
-background:black;
-font-size:14px;
+
+/* PITLANE heading */
+
+h2 {
+    position: relative;
+
+    font-weight: 900;
+
+    color: white;
+
+    font-size: 3rem;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 15px rgba(225, 6, 0, 0.4);
+
+    margin-bottom: 45px !important;
+}
+
+
+/* Red racing line below heading */
+
+h2::after {
+    content: "";
+
+    display: block;
+
+    width: 90px;
+    height: 4px;
+
+    margin: 14px auto 0;
+
+    background: #e10600;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 12px rgba(225, 6, 0, 0.7);
+}
+
+
+/* =========================================
+   TEAM CARDS
+   ========================================= */
+
+.card {
+    position: relative;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171717,
+            #0b0b0b
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    color: white;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* Red racing line at top of card */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #e10600;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: 0.35s ease;
+
+    z-index: 10;
+}
+
+
+/* Card hover */
+
+.card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(225, 6, 0, 0.7);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.8),
+        0 0 25px rgba(225, 6, 0, 0.15);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* =========================================
+   TEAM IMAGES
+   ========================================= */
+
+.card img {
+    height: 200px;
+
+    width: 100%;
+
+    object-fit: contain;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle,
+            #252525 0%,
+            #111 55%,
+            #080808 100%
+        );
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* Image zoom */
+
+.card:hover img {
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 10px 18px rgba(0, 0, 0, 0.8)
+        );
+}
+
+
+/*
+   Override Bootstrap's card-img-top
+   so every team image uses the same
+   dark racing appearance.
+*/
+
+.card-img-top {
+    height: 200px;
+
+    object-fit: contain;
+
+    background:
+        radial-gradient(
+            circle,
+            #252525,
+            #0c0c0c 70%
+        );
+}
+
+
+/* =========================================
+   CARD BODY
+   ========================================= */
+
+.card-body {
+    background:
+        linear-gradient(
+            180deg,
+            #151515,
+            #0b0b0b
+        );
+
+    padding: 22px;
+}
+
+
+/* Team title */
+
+.card-title {
+    color: white;
+
+    font-size: 1.2rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Team description */
+
+.card-text {
+    color: #999;
+
+    font-size: 0.9rem;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn-danger {
+    background: #d00000;
+
+    border: none;
+
+    color: white;
+
+    font-weight: 700;
+
+    border-radius: 8px;
+
+    padding: 10px 20px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.btn-danger:hover {
+    background: #ff4343;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(225, 6, 0, 0.35);
+}
+
+
+.btn-danger:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   CARD ANIMATION
+   ========================================= */
+
+.card {
+    animation: cardEntry 0.7s ease both;
+}
+
+
+@keyframes cardEntry {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* Different delays */
+
+.col-md-4:nth-child(1) .card {
+    animation-delay: 0.05s;
+}
+
+.col-md-4:nth-child(2) .card {
+    animation-delay: 0.10s;
+}
+
+.col-md-4:nth-child(3) .card {
+    animation-delay: 0.15s;
+}
+
+.col-md-4:nth-child(4) .card {
+    animation-delay: 0.20s;
+}
+
+.col-md-4:nth-child(5) .card {
+    animation-delay: 0.25s;
+}
+
+.col-md-4:nth-child(6) .card {
+    animation-delay: 0.30s;
+}
+
+.col-md-4:nth-child(7) .card {
+    animation-delay: 0.35s;
+}
+
+.col-md-4:nth-child(8) .card {
+    animation-delay: 0.40s;
+}
+
+.col-md-4:nth-child(9) .card {
+    animation-delay: 0.45s;
+}
+
+.col-md-4:nth-child(10) .card {
+    animation-delay: 0.50s;
+}
+
+.col-md-4:nth-child(11) .card {
+    animation-delay: 0.55s;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #050505,
+            #151515
+        ) !important;
+
+    border-top: 1px solid rgba(225, 6, 0, 0.4);
+
+    font-size: 14px;
+
+    color: #aaa !important;
+
+    padding: 20px !important;
+
+    margin-top: 50px !important;
+
+    box-shadow:
+        0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e10600;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    h2 {
+        font-size: 2.3rem;
+
+        letter-spacing: 4px;
+    }
+
+    .navbar {
+        padding: 12px 15px;
+    }
+
+    .card img,
+    .card-img-top {
+        height: 190px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    h2 {
+        font-size: 1.8rem;
+
+        letter-spacing: 3px;
+    }
+
+    .card img,
+    .card-img-top {
+        height: 180px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+
+    .navbar-brand {
+        font-size: 19px;
+    }
 }
