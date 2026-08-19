@@ -1,578 +1,426 @@
-/* =========================================
-   PITLANE F1 - DARK MODE RACING THEME
-   ========================================= */
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@600;700;800&display=swap');
+:root {
+    --accent:#e10600;
+    --bg:#050505;
+    --panel:#0d0d0f;
+    --panel2:#121216;
+    --text:#f7f7f7;
+    --muted:#a8a8b2;
+    --line:rgba(255,255,255,.09)
+}
 * {
-    box-sizing: border-box;
+    box-sizing:border-box
 }
-
 html {
-    scroll-behavior: smooth;
+    scroll-behavior:smooth
 }
-
 body {
-    margin: 0;
-    background: #050505;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-
-    /* F1 Background */
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.82),
-            rgba(0, 0, 0, 0.92)
-        ),
-        url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/116/191/original/F1-logo-red-on-white.jpeg?1708530205");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    min-height: 100vh;
+    margin:0;
+    background:radial-gradient(circle at 20% 0%,rgba(225,6,0,.14),transparent 28%),var(--bg);
+    color:var(--text);
+    font-family:Inter,Arial,sans-serif
 }
-
-
-/* =========================================
-   NAVBAR
-   ========================================= */
-
 .navbar {
-    background: rgba(225, 6, 0, 0.95) !important;
-
-    position: sticky;
-    top: 0;
-
-    z-index: 1000;
-
-    padding: 13px 20px;
-
-    border-bottom: 2px solid rgba(255, 255, 255, 0.12);
-
-    box-shadow:
-        0 5px 25px rgba(0, 0, 0, 0.6);
-
-    backdrop-filter: blur(10px);
+    background:rgba(5,5,5,.92);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(225,6,0,.45);
+    padding:1rem 0;
+    position:sticky;
+    top:0;
+    z-index:1000
 }
-
-
-/* Navbar brand */
-
 .navbar-brand {
-    font-size: 22px;
-
-    font-weight: 900;
-
-    letter-spacing: 1.5px;
-
-    color: white !important;
-
-    transition: 0.3s ease;
+    font-family:Orbitron,sans-serif;
+    font-weight:800;
+    letter-spacing:.12em;
+    color:#fff!important
 }
-
-.navbar-brand:hover {
-    color: #111 !important;
-
-    transform: translateX(3px);
+.nav-link {
+    color:#ddd!important;
+    font-weight:700
 }
-
-
-/* Navbar links */
-
-.navbar-nav .nav-link {
-    white-space: nowrap;
-
-    color: white !important;
-
-    font-weight: 600;
-
-    margin-left: 10px;
-
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
+.nav-link:hover {
+    color:#e10600!important
 }
-
-.navbar-nav .nav-link:hover {
-    color: #111 !important;
-
-    transform: translateY(-2px);
+.hero {
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.48),rgba(0,0,0,.8)),url('PITLANE_F1.jpg') center/cover
 }
-
-
-/* Navbar toggle */
-
-.navbar-toggler {
-    border: 1px solid rgba(255, 255, 255, 0.5);
+.hero-inner {
+    padding:8rem 1rem
 }
-
-.navbar-toggler:focus {
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+.hero-label,.eyebrow {
+    font-size:.75rem;
+    font-weight:800;
+    letter-spacing:.18em;
+    color:#e10600
 }
-
-
-/* =========================================
-   DROPDOWN MENU
-   ========================================= */
-
-.dropdown-menu {
-    background: #111;
-
-    border: 1px solid #333;
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.7);
+.hero-label {
+    display:inline-block;
+    background:#fff;
+    padding:.7rem 1rem;
+    border-radius:999px;
+    margin-bottom:1.5rem
 }
-
-.dropdown-item {
-    color: white;
-
-    padding: 10px 16px;
-
-    transition: 0.2s ease;
+.hero h1 {
+    font-family:Orbitron,sans-serif;
+    font-size:clamp(2.8rem,7vw,6.8rem);
+    line-height:.95;
+    letter-spacing:-.04em;
+    font-weight:900;
+    margin:0 0 1.5rem
 }
-
-.dropdown-item:hover {
-    background: #e10600;
-
-    color: white;
+.hero h1 span {
+    color:#e10600
 }
-
-
-/* =========================================
-   MAIN CONTENT
-   ========================================= */
-
-main {
-    min-height: calc(100vh - 150px);
+.hero p {
+    max-width:720px;
+    color:#d0d0d4;
+    font-size:1.08rem;
+    line-height:1.8
 }
-
-
-/* PITLANE heading */
-
-h2 {
-    position: relative;
-
-    font-weight: 900;
-
-    color: white;
-
-    font-size: 3rem;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    text-shadow:
-        0 0 15px rgba(225, 6, 0, 0.4);
-
-    margin-bottom: 45px !important;
+.hero-cta,.team-btn,.ghost-btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-weight:800;
+    border-radius:999px
 }
-
-
-/* Red racing line below heading */
-
-h2::after {
-    content: "";
-
-    display: block;
-
-    width: 90px;
-    height: 4px;
-
-    margin: 14px auto 0;
-
-    background: #e10600;
-
-    border-radius: 10px;
-
-    box-shadow:
-        0 0 12px rgba(225, 6, 0, 0.7);
+.hero-cta {
+    margin-top:1.3rem;
+    background:#e10600;
+    color:#050505;
+    padding:1rem 1.5rem
 }
-
-
-/* =========================================
-   TEAM CARDS
-   ========================================= */
-
-.card {
-    position: relative;
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            145deg,
-            #171717,
-            #0b0b0b
-        );
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-
-    border-radius: 14px;
-
-    color: white;
-
-    overflow: hidden;
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
+.hero-cta:hover {
+    background:#fff;
+    color:#e10600
 }
-
-
-/* Red racing line at top of card */
-
-.card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background: #e10600;
-
-    transform: scaleX(0);
-
-    transform-origin: left;
-
-    transition: 0.35s ease;
-
-    z-index: 10;
+.section-block {
+    padding:5rem 0
 }
-
-
-/* Card hover */
-
-.card:hover {
-    transform: translateY(-10px);
-
-    border-color: rgba(225, 6, 0, 0.7);
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.8),
-        0 0 25px rgba(225, 6, 0, 0.15);
+.section-head {
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:1rem;
+    margin-bottom:2rem
 }
-
-.card:hover::before {
-    transform: scaleX(1);
+.section-head h2 {
+    font-family:Orbitron,sans-serif;
+    font-size:clamp(2rem,4vw,3.2rem);
+    margin:.35rem 0 0
 }
-
-
-/* =========================================
-   TEAM IMAGES
-   ========================================= */
-
-.card img {
-    height: 200px;
-
-    width: 100%;
-
-    object-fit: contain;
-
-    padding: 20px;
-
-    background:
-        radial-gradient(
-            circle,
-            #252525 0%,
-            #111 55%,
-            #080808 100%
-        );
-
-    transition:
-        transform 0.4s ease,
-        filter 0.4s ease;
+.section-note,.live-status {
+    color:#85858e;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.08em
 }
-
-
-/* Image zoom */
-
-.card:hover img {
-    transform: scale(1.08);
-
-    filter:
-        drop-shadow(
-            0 10px 18px rgba(0, 0, 0, 0.8)
-        );
+.team-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.2rem
 }
-
-
-/*
-   Override Bootstrap's card-img-top
-   so every team image uses the same
-   dark racing appearance.
-*/
-
-.card-img-top {
-    height: 200px;
-
-    object-fit: contain;
-
-    background:
-        radial-gradient(
-            circle,
-            #252525,
-            #0c0c0c 70%
-        );
+.team-card {
+    background:linear-gradient(145deg,#111115,#09090b);
+    border:1px solid var(--line);
+    border-radius:26px;
+    overflow:hidden;
+    transition:.35s;
+    box-shadow:0 15px 50px rgba(0,0,0,.25)
 }
-
-
-/* =========================================
-   CARD BODY
-   ========================================= */
-
-.card-body {
-    background:
-        linear-gradient(
-            180deg,
-            #151515,
-            #0b0b0b
-        );
-
-    padding: 22px;
+.team-card:hover {
+    transform:translateY(-8px);
+    border-color:rgba(225,6,0,.6);
+    box-shadow:0 25px 70px rgba(225,6,0,.14)
 }
-
-
-/* Team title */
-
-.card-title {
-    color: white;
-
-    font-size: 1.2rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.5px;
-
-    margin-bottom: 8px;
+.team-card-media {
+    height:260px;
+    background:#f4f4f4;
+    position:relative;
+    overflow:hidden
 }
-
-
-/* Team description */
-
-.card-text {
-    color: #999;
-
-    font-size: 0.9rem;
-
-    margin-bottom: 20px;
+.media-img {
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover
 }
-
-
-/* =========================================
-   BUTTONS
-   ========================================= */
-
-.btn-danger {
-    background: #d00000;
-
-    border: none;
-
-    color: white;
-
-    font-weight: 700;
-
-    border-radius: 8px;
-
-    padding: 10px 20px;
-
-    transition:
-        background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+.team-card-media .media-img {
+    object-fit:cover
 }
-
-
-.btn-danger:hover {
-    background: #ff4343;
-
-    color: white;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(225, 6, 0, 0.35);
+.team-badge {
+    position:absolute;
+    top:1rem;
+    right:1rem;
+    background:#050505;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.18);
+    padding:.4rem .65rem;
+    border-radius:999px;
+    font-size:.7rem;
+    font-weight:800
 }
-
-
-.btn-danger:active {
-    transform: scale(0.96);
+.team-card-body {
+    padding:1.5rem
 }
-
-
-/* =========================================
-   CARD ANIMATION
-   ========================================= */
-
-.card {
-    animation: cardEntry 0.7s ease both;
+.team-card h3 {
+    font-family:Orbitron,sans-serif;
+    margin:.35rem 0;
+    font-size:1.5rem
 }
-
-
-@keyframes cardEntry {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(25px);
+.team-meta {
+    display:flex;
+    justify-content:space-between;
+    color:#bbb;
+    font-size:.82rem;
+    font-weight:800;
+    margin:.8rem 0
+}
+.drivers-mini {
+    display:flex;
+    gap:.5rem;
+    flex-wrap:wrap;
+    margin-bottom:1.2rem
+}
+.drivers-mini span {
+    background:#1a1a1f;
+    border:1px solid var(--line);
+    padding:.45rem .6rem;
+    border-radius:999px;
+    font-size:.72rem
+}
+.team-btn {
+    background:#fff;
+    color:#050505;
+    padding:.75rem 1rem
+}
+.team-btn:hover {
+    background:#e10600;
+    color:#050505
+}
+.standings-section {
+    background:linear-gradient(180deg,#09090b,#050505);
+    border-top:1px solid var(--line)
+}
+.tables-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.2rem
+}
+.standings-card {
+    background:#0d0d10;
+    border:1px solid var(--line);
+    border-radius:26px;
+    padding:1.3rem;
+    overflow:hidden
+}
+.standings-card h3 {
+    font-family:Orbitron,sans-serif;
+    margin:.4rem .5rem 1rem
+}
+.table-wrap {
+    overflow:auto
+}
+table {
+    width:100%;
+    border-collapse:collapse;
+    min-width:420px
+}
+th,td {
+    text-align:left;
+    padding:.85rem .55rem;
+    border-bottom:1px solid var(--line);
+    font-size:.85rem
+}
+th {
+    font-size:.68rem;
+    color:#777;
+    letter-spacing:.12em
+}
+tbody tr:hover {
+    background:rgba(255,255,255,.03)
+}
+td:last-child {
+    text-align:right;
+    color:#fff
+}
+.team-hero {
+    padding:4rem 0 2rem;
+    background:radial-gradient(circle at 70% 20%,rgba(225,6,0,.16),transparent 30%)
+}
+.team-hero .container {
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+    gap:2rem;
+    align-items:center
+}
+.hero-kicker {
+    color:#e10600;
+    font-size:.72rem;
+    font-weight:900;
+    letter-spacing:.2em
+}
+.team-hero h1 {
+    font-family:Orbitron,sans-serif;
+    font-size:clamp(3rem,7vw,6rem);
+    margin:.4rem 0
+}
+.team-hero p {
+    color:#aaa;
+    font-size:1.1rem
+}
+.hero-pills {
+    display:flex;
+    gap:.6rem;
+    flex-wrap:wrap
+}
+.hero-pills span {
+    padding:.55rem .8rem;
+    border:1px solid var(--line);
+    background:#111;
+    border-radius:999px;
+    color:#ddd;
+    font-size:.8rem;
+    font-weight:700
+}
+.hero-car {
+    height:390px;
+    background:#eee;
+    border-radius:30px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 30px 80px rgba(0,0,0,.35)
+}
+.hero-car .media-img {
+    object-fit:cover
+}
+.team-detail {
+    padding-bottom:5rem
+}
+.ghost-btn {
+    padding:.7rem 1rem;
+    border:1px solid var(--line);
+    color:#ddd
+}
+.driver-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1.2rem
+}
+.driver-panel {
+    background:#101014;
+    border:1px solid var(--line);
+    border-radius:26px;
+    overflow:hidden;
+    position:relative
+}
+.driver-panel .media-img {
+    height:390px;
+    object-fit:cover
+}
+.driver-info {
+    padding:1.3rem 1.4rem
+}
+.driver-number {
+    color:#e10600;
+    font-family:Orbitron;
+    font-size:.85rem;
+    font-weight:900
+}
+.driver-info h3 {
+    font-family:Orbitron;
+    margin:.3rem 0;
+    font-size:1.5rem
+}
+.driver-info p {
+    color:#999;
+    margin:0
+}
+.team-stats-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1rem;
+    margin-top:1.2rem
+}
+.team-stats-grid>div {
+    background:#101014;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:1.3rem
+}
+.team-stats-grid small {
+    display:block;
+    color:#777;
+    font-size:.65rem;
+    font-weight:900;
+    letter-spacing:.15em
+}
+.team-stats-grid strong {
+    display:block;
+    margin-top:.45rem;
+    font-family:Orbitron
+}
+.footer {
+    padding:2rem 1rem;
+    border-top:1px solid var(--line);
+    text-align:center;
+    color:#777;
+    font-size:.8rem
+}
+@media(max-width:992px) {
+    .team-grid {
+        grid-template-columns:repeat(2,1fr)
     }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
+    .tables-grid {
+        grid-template-columns:1fr
+    }
+    .team-hero .container {
+        grid-template-columns:1fr
+    }
+    .team-stats-grid {
+        grid-template-columns:repeat(2,1fr)
     }
 }
-
-
-/* Different delays */
-
-.col-md-4:nth-child(1) .card {
-    animation-delay: 0.05s;
-}
-
-.col-md-4:nth-child(2) .card {
-    animation-delay: 0.10s;
-}
-
-.col-md-4:nth-child(3) .card {
-    animation-delay: 0.15s;
-}
-
-.col-md-4:nth-child(4) .card {
-    animation-delay: 0.20s;
-}
-
-.col-md-4:nth-child(5) .card {
-    animation-delay: 0.25s;
-}
-
-.col-md-4:nth-child(6) .card {
-    animation-delay: 0.30s;
-}
-
-.col-md-4:nth-child(7) .card {
-    animation-delay: 0.35s;
-}
-
-.col-md-4:nth-child(8) .card {
-    animation-delay: 0.40s;
-}
-
-.col-md-4:nth-child(9) .card {
-    animation-delay: 0.45s;
-}
-
-.col-md-4:nth-child(10) .card {
-    animation-delay: 0.50s;
-}
-
-.col-md-4:nth-child(11) .card {
-    animation-delay: 0.55s;
-}
-
-
-/* =========================================
-   FOOTER
-   ========================================= */
-
-footer {
-    background:
-        linear-gradient(
-            135deg,
-            #050505,
-            #151515
-        ) !important;
-
-    border-top: 1px solid rgba(225, 6, 0, 0.4);
-
-    font-size: 14px;
-
-    color: #aaa !important;
-
-    padding: 20px !important;
-
-    margin-top: 50px !important;
-
-    box-shadow:
-        0 -10px 30px rgba(0, 0, 0, 0.5);
-}
-
-
-/* =========================================
-   SCROLLBAR
-   ========================================= */
-
-::-webkit-scrollbar {
-    width: 9px;
-}
-
-::-webkit-scrollbar-track {
-    background: #050505;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #333;
-
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #e10600;
-}
-
-
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
-
-@media (max-width: 768px) {
-
-    h2 {
-        font-size: 2.3rem;
-
-        letter-spacing: 4px;
+@media(max-width:650px) {
+    .team-grid,.driver-grid {
+        grid-template-columns:1fr
     }
-
-    .navbar {
-        padding: 12px 15px;
+    .hero-inner {
+        padding:5rem 1rem
     }
-
-    .card img,
-    .card-img-top {
-        height: 190px;
+    .section-block {
+        padding:3.5rem 0
+    }
+    .section-head {
+        align-items:start;
+        flex-direction:column
+    }
+    .team-card-media {
+        height:220px
+    }
+    .hero-car {
+        height:250px
+    }
+    .driver-panel .media-img {
+        height:330px
+    }
+    .team-stats-grid {
+        grid-template-columns:1fr 1fr
     }
 }
-
-
-@media (max-width: 576px) {
-
-    h2 {
-        font-size: 1.8rem;
-
-        letter-spacing: 3px;
-    }
-
-    .card img,
-    .card-img-top {
-        height: 180px;
-    }
-
-    .card-body {
-        padding: 18px;
-    }
-
-    .navbar-brand {
-        font-size: 19px;
-    }
+.standings-hero {
+    min-height: 55vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .9), rgba(0, 0, 0, .55)), url('PITLANE_F1.jpg') center / cover;
 }
+
+.standings-hero .hero-inner {
+    padding: 6rem 1rem;
+}
+

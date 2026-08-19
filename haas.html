@@ -1,68 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PITLANE F1 | Haas F1</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/1023/1023757.png">
-    <link rel="stylesheet" href="f1.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-            />
-</head>
-<body>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><b>PITLANE F1</b></a>
-
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <a class="nav-link" href="index.html">Home</a>
-
-                        <li class="nav-item">
-                        <a class="nav-link" href="https://www.formula1.com">F1 Official Site</a>
-                        </li>
-                        </ul>
-
-
-
-                    </div>
-                </div>
-            </nav>
-            <div style="text-align: center; margin-left: 100px; margin-right: 100px;">
-
-    <h1 style="background-color: black; color:white; margin: 10px 0px 10px 0px;">Haas F1</h1>
-
-    <h2>VF-26</h2>
-
-    <img src="data:image/jpeg;base64,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" alt="" style="height: 250px; margin: 10px 0px 0px 0px;"><br>
-
-    <p style="font-size:20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; line-height:1.6;"><b>
-        The Haas VF-26 marks a transformative era for the American squad, representing the first car built under Formula 1's compact 2026 technical regulations and the debut of their high-profile title partnership with Toyota Gazoo Racing. Visually striking in its red and white TGR-inspired livery, the machine is noticeably smaller and more agile than its predecessors, featuring a shortened wheelbase and reduced width designed to improve wheel-to-wheel racing. Underneath the bodywork, it retains a strong technical tie to Maranello, powered by the Ferrari 067/6 power unit which, per the new rules, delivers an even split between internal combustion and electrical energy. This season also sees the team lean into active aerodynamics, using moveable front and rear wing elements to balance high-speed efficiency with cornering downforce.
-    </b></p>
-
-    <h2 style="background-color: black; color:white; margin: 10px 0px 10px 0px;">DRIVERS</h2>
-
-    <h3 style="margin: 10px 0px 10px 0px;">ESTEBAN OCON</h3>
-    <img src="https://www.autohebdo.fr/app/uploads/2025/11/DPPI_00125026_1234-2-753x494.jpg" alt="" style="height: 250px;">
-
-    <p style="font-size:20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; line-height:1.6;"><b>
-        Esteban Ocon is a French Formula 1 driver racing for Haas F1 Team in the 2026 season. Ocon made his debut in Formula 1 in 2016 and quickly gained recognition for his determination, aggressive defensive driving, and consistent performances. Before reaching Formula 1 he was part of the Mercedes driver development program and achieved success in several junior racing series. One of the most important moments of his career came at the 2021 Hungarian Grand Prix, where he secured his first Formula 1 victory after an outstanding defensive drive. Ocon is known for his ability to fight hard on track while maintaining a strategic approach to racing. His experience with multiple teams and different car characteristics makes him extremely valuable for Haas as the team continues to develop its competitiveness in the midfield. Ocon's dedication, work ethic, and determination to succeed have made him a respected driver throughout the paddock.
-    </b></p>
-
-    <h3 style="margin: 10px 0px 10px 0px;">OLIVER BEARMAN</h3>
-    <img src="https://cdn.racingnews365.com/2025/Bearman/Bearman-Presser-Zandvoort.jpg?v=1756391012&width=1092&height=683&quality=85&crop=6000%2C3753%2C0%2C123" alt="" height="250px">
-    <p style="font-size:20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; line-height:1.6;"><b>
-       Oliver Bearman is a young British Formula 1 driver competing for Haas F1 Team and is widely regarded as one of the most promising talents in modern motorsport. Bearman rose through the ranks of junior racing categories with impressive performances in Formula 4, Formula 3, and Formula 2 championships. As a member of the Scuderia Ferrari Driver Academy, he received extensive training and support from one of the most prestigious teams in motorsport. Bearman gained worldwide attention after stepping in as a substitute driver during a Formula 1 race weekend and delivering an exceptional performance despite limited experience. His calm approach, technical understanding of the car, and natural racing instincts have impressed engineers and fans alike. By the 2026 season he has established himself as a full-time Formula 1 driver and is expected to continue developing into a future race winner and championship contender.
-    </b></p>
-            </div>
-</body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Haas F1 Team | PITLANE F1
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="f1.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+   <div class="container">
+    <a class="navbar-brand" href="index.html">
+     ⚡ PITLANE F1
+    </a>
+    <a class="nav-link" href="standings.html">
+     Standings
+    </a>
+   </div>
+  </nav>
+  <main data-team="haas" id="team-page">
+  </main>
+  <footer class="footer">
+   &copy; 2026 PITLANE F1 &bull; 2026 Team Profile
+  </footer>
+  <script src="teams-data.js">
+  </script>
+  <script src="pitlane.js">
+  </script>
+ </body>
 </html>
